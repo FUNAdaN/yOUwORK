@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Apresentação YOUWORK</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap');
+        body {
+            font-family: 'Inter', sans-serif;
+            overflow: hidden;
+            background-color: #F3F4F6;
+        }
+        .slide {
+            width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: transform 0.5s ease-in-out;
+            transform: translateX(100%);
+            position: absolute;
+            top: 0;
+            left: 0;
+            padding: 2rem;
+            box-sizing: border-box;
+            background-color: #E0E8F0;
+            color: #1F2937;
+        }
+        .slide.active {
+            transform: translateX(0);
+        }
+        .slide-content {
+            text-align: center;
+            max-width: 900px;
+            padding: 2rem;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 1.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .slide-bg-1 { background-color: #E0E8F0; }
+        .slide-bg-2 { background-color: #D6E0E9; }
+        .slide-bg-3 { background-color: #CAD4DF; }
+        .slide-bg-4 { background-color: #BCC5D0; }
+        .slide-bg-5 { background-color: #A9B1BD; }
+        .slide-bg-6 { background-color: #9AA6B2; }
+        .comforting-gradient {
+            background-image: linear-gradient(135deg, #F3F4F6 0%, #E2E8F0 100%);
+        }
+        .slide h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            color: #1F2937;
+            margin-bottom: 1rem;
+        }
+        .slide p {
+            font-size: 1.25rem;
+            color: #4B5563;
+        }
+        .feature-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            text-align: left;
+        }
+        canvas {
+            touch-action: none; /* Prevents default touch gestures */
+            margin-top: 2rem;
+            max-width: 100%;
+        }
+    </style>
+</head>
+<body class="comforting-gradient">
+
+    <!-- Slides -->
+    <div id="slides-container">
+        
+        <!-- Slide 1: Título e Slogan -->
+        <div class="slide active slide-bg-1" data-slide="1">
+            <div class="slide-content">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-[#374151]">YOUWORK</h1>
+                <p class="mt-4 text-xl md:text-2xl text-gray-600">O App que conecta serviços e talentos.</p>
+                <p class="mt-2 text-lg text-gray-500">Facilidade, praticidade e suporte para novos empreendedores.</p>
+                <div id="canvas-container" class="w-full md:w-[600px] md:h-[400px]">
+                    <!-- O canvas 3D será renderizado aqui -->
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 2: O Problema e a Solução -->
+        <div class="slide slide-bg-2" data-slide="2">
+            <div class="slide-content">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#374151]">O que a YouWork resolve?</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">Conectar pessoas que precisam de serviços rápidos a profissionais qualificados e acessíveis.</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-2 gap-8">
+                    <div class="flex flex-col items-center">
+                        <svg class="w-16 h-16 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                        <p class="mt-2 text-lg font-semibold">Falta de tempo</p>
+                        <p class="text-gray-500 text-center">Encontrar serviços de forma ágil e eficiente.</p>
+                    </div>
+                    <div class="flex flex-col items-center">
+                        <svg class="w-16 h-16 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 13.255A23.931 23.931 0 0112 15c-3.183 0-6.22-1.255-8.455-3.545L5.755 8.755A16.095 16.095 0 0112 11.5c2.31 0 4.5-.873 6.136-2.584l-2.001-2.001a1 1 0 00-1.414 1.414l2.001 2.001a13.91 13.91 0 00-4.757-1.127l.001.001a.999.999 0 00-1.096-1.745l.001.001a.999.999 0 00-1.414 1.414l.001.001a13.91 13.91 0 00-4.757-1.127l.001.001a.999.999 0 00-1.096-1.745l.001.001a.999.999 0 00-1.414 1.414l.001.001zM12 21a9 9 0 100-18 9 9 0 000 18z"></path></svg>
+                        <p class="mt-2 text-lg font-semibold">Dificuldade para começar</p>
+                        <p class="text-gray-500 text-center">Empreendedores sem experiência em gestão e marketing.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 3: Como funciona -->
+        <div class="slide slide-bg-3" data-slide="3">
+            <div class="slide-content">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#374151]">Como a YouWork Funciona?</h1>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">Para Usuários</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
+                            <li>Cadastre-se ou acesse o app.</li>
+                            <li>Busque serviços por categoria ou localização.</li>
+                            <li>Contrate o profissional ideal com segurança.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">Para Profissionais</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
+                            <li>Crie seu perfil e divulgue seus serviços.</li>
+                            <li>Defina seus preços e horários.</li>
+                            <li>Conecte-se com clientes e cresça seu negócio.</li>
+                        </ul>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">Para Empreendedores</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
+                            <li>A YouWork oferece suporte em marketing e gestão.</li>
+                            <li>Mentoria e ferramentas para começar com o pé direito.</li>
+                            <li>Foco no seu talento, nós cuidamos do resto.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Slide 4: Onde Estamos Chegando -->
+        <div class="slide slide-bg-4" data-slide="4">
+            <div class="slide-content">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#374151]">Visão Futura</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">Ser a plataforma de referência para serviços locais, criando uma comunidade de apoio mútuo entre clientes e empreendedores.</p>
+                <ul class="mt-8 space-y-4 text-left text-gray-700">
+                    <li class="flex items-center gap-4">
+                        <svg class="w-8 h-8 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-3.18 0-6.19 1.25-8.49 3.51a1.002 1.002 0 00-.01 1.41l8.5 8.51c.39.39 1.02.39 1.41 0l8.5-8.51a1.002 1.002 0 00-.01-1.41C18.19 9.25 15.18 8 12 8z"></path></svg>
+                        <span class="text-lg">Expandir para novas cidades e países.</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <svg class="w-8 h-8 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
+                        <span class="text-lg">Desenvolver ferramentas de IA para otimizar a conexão entre profissionais e clientes.</span>
+                    </li>
+                    <li class="flex items-center gap-4">
+                        <svg class="w-8 h-8 text-[#4B5563]" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 19l9 2-9-18-9 18 9-2zm0 0v-8"></path></svg>
+                        <span class="text-lg">Criar uma academia YouWork para treinamento e capacitação.</span>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Slide 5: Concorrentes -->
+        <div class="slide slide-bg-5" data-slide="5">
+            <div class="slide-content">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#374151]">YOUWORK vs. Concorrentes</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">Nossa plataforma se diferencia por ser o seu parceiro de crescimento.</p>
+                <div class="mt-8 grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">LinkedIn</h3>
+                        <p class="mt-2 text-gray-600">Focado em networking e empregos corporativos. Não é otimizado para serviços autônomos locais.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">Workana e GetNinjas</h3>
+                        <p class="mt-2 text-gray-600">Plataformas de freelancers para projetos pontuais. Muita concorrência por preço baixo e falta de suporte.</p>
+                    </div>
+                    <div class="bg-white p-6 rounded-2xl shadow-md">
+                        <h3 class="text-2xl font-bold text-[#4B5563]">Nosso Diferencial</h3>
+                        <ul class="mt-4 list-disc list-inside space-y-2 text-gray-600">
+                            <li>**Plataforma simplificada:** um app prático e intuitivo, sem burocracia.</li>
+                            <li>**Suporte de IA:** a **Mentoria Inteligente** ajuda a gerir e promover seu serviço.</li>
+                            <li>**Foco em serviços locais:** conectamos você aos clientes na sua região de forma direta.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Slide 6: Ferramentas de IA para Empreendedores -->
+        <div class="slide slide-bg-6" data-slide="6">
+            <div class="slide-content">
+                <h1 class="text-3xl md:text-5xl font-bold text-[#374151]">✨ Mentoria Inteligente para Empreendedores</h1>
+                <p class="mt-4 text-lg md:text-xl text-gray-600">A YouWork oferece um assistente de IA para te ajudar a planejar seu negócio.</p>
+                <div class="mt-8 w-full max-w-lg">
+                    <textarea id="business-idea-input" class="w-full h-24 p-4 rounded-lg border-2 border-gray-300 focus:outline-none focus:border-[#4B5563]" placeholder="Descreva sua ideia de negócio (ex: 'serviço de jardinagem orgânica')"></textarea>
+                    <button id="generate-plan-btn" class="mt-4 w-full bg-[#374151] text-white py-3 px-6 rounded-full shadow-lg hover:bg-[#4B5563] transition-colors font-bold">
+                        Gerar Plano de Ação ✨
+                    </button>
+                </div>
+                <div id="plan-output" class="mt-8 w-full max-w-lg text-left text-gray-700 p-6 rounded-lg bg-gray-100 hidden">
+                    <p><strong>Plano de Ação:</strong></p>
+                </div>
+                <div id="loading-indicator" class="mt-4 hidden">
+                    <p class="text-gray-500 animate-pulse">Gerando plano de ação...</p>
+                </div>
+            </div>
+        </div>
+        
+    </div>
+
+    <!-- Controles de Navegação -->
+    <div class="absolute bottom-8 right-8 flex space-x-4">
+        <button id="prevBtn" class="bg-white p-3 rounded-full shadow-lg text-[#374151] hover:bg-gray-200 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+        </button>
+        <button id="nextBtn" class="bg-white p-3 rounded-full shadow-lg text-[#374151] hover:bg-gray-200 transition-colors">
+            <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+        </button>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/three@0.128.0/examples/js/controls/OrbitControls.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const slides = document.querySelectorAll('.slide');
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const businessIdeaInput = document.getElementById('business-idea-input');
+            const generatePlanBtn = document.getElementById('generate-plan-btn');
+            const planOutput = document.getElementById('plan-output');
+            const loadingIndicator = document.getElementById('loading-indicator');
+            let currentSlide = 0;
+
+            function showSlide(index) {
+                slides.forEach((slide, i) => {
+                    slide.classList.remove('active');
+                    if (i === index) {
+                        slide.classList.add('active');
+                    }
+                });
+                updateButtons(index);
+            }
+
+            function updateButtons(index) {
+                prevBtn.disabled = index === 0;
+                nextBtn.disabled = index === slides.length - 1;
+                prevBtn.style.opacity = index === 0 ? '0.5' : '1';
+                nextBtn.style.opacity = index === slides.length - 1 ? '0.5' : '1';
+            }
+
+            nextBtn.addEventListener('click', () => {
+                if (currentSlide < slides.length - 1) {
+                    currentSlide++;
+                    showSlide(currentSlide);
+                }
+            });
+
+            prevBtn.addEventListener('click', () => {
+                if (currentSlide > 0) {
+                    currentSlide--;
+                    showSlide(currentSlide);
+                }
+            });
+
+            // Adiciona a funcionalidade com exemplos fixos
+            generatePlanBtn.addEventListener('click', async () => {
+                const businessIdea = businessIdeaInput.value.toLowerCase().trim();
+                let planText = '';
+
+                loadingIndicator.classList.remove('hidden');
+                planOutput.classList.add('hidden');
+                planOutput.innerHTML = '<p><strong>Plano de Ação:</strong></p>';
+
+                setTimeout(() => {
+                    if (businessIdea.includes('jardinagem')) {
+                        planText = `
+**Jardinagem**
+O seu sucesso começa com o **YouWork**.
+**1. Criar e Otimizar seu Perfil YouWork:**
+  * Faça upload de fotos de alta qualidade de seus projetos.
+  * Descreva seus serviços de forma clara e profissional.
+  * Utilize as tags certas, como 'jardinagem', 'poda', 'paisagismo', para ser facilmente encontrado.
+
+**2. Utilizar as Ferramentas de Marketing do YouWork:**
+  * Use a **Mentoria Inteligente** para receber dicas de como otimizar seus anúncios.
+  * Compartilhe seu link de perfil diretamente nas redes sociais para atrair mais clientes.
+  * Peça para seus clientes avaliarem seu serviço diretamente no app.
+`;
+                    } else if (businessIdea.includes('contador')) {
+                        planText = `
+**Serviços de Contabilidade**
+Para se destacar, use as ferramentas do **YouWork**.
+**1. Criar e Otimizar seu Perfil YouWork:**
+  * Publique artigos curtos sobre 'Como declarar MEI' ou 'Dicas de gestão financeira' diretamente em seu perfil.
+  * Inclua suas certificações e experiência para transmitir segurança.
+  * Ofereça um serviço de consultoria rápida para atrair novos clientes.
+
+**2. Utilizar as Ferramentas de Marketing do YouWork:**
+  * Use a **Mentoria Inteligente** para gerar respostas prontas para as perguntas mais comuns dos clientes.
+  * Crie pacotes de serviços (mensal, trimestral) e publique-os em seu perfil.
+  * Utilize a função de chat do app para manter uma comunicação profissional com seus clientes.
+`;
+                    } else if (businessIdea.includes('desenvolvedor')) {
+                        planText = `
+**Desenvolvedor(a) de IA**
+O **YouWork** é o lugar ideal para construir sua carreira.
+**1. Criar e Otimizar seu Perfil YouWork:**
+  * Apresente seu portfólio diretamente no seu perfil com links para o GitHub ou projetos.
+  * Detalhe suas especialidades (ex: 'machine learning', 'visão computacional').
+  * Crie um serviço chamado 'Consultoria em IA' para projetos de curta duração.
+
+**2. Utilizar as Ferramentas de Marketing do YouWork:**
+  * Use a **Mentoria Inteligente** para receber dicas sobre como precificar seus projetos.
+  * Compartilhe depoimentos de clientes satisfeitos diretamente no seu perfil.
+  * Envie propostas de projetos diretamente no chat, mostrando sua experiência.
+`;
+                    } else if (businessIdea.includes('psicologo') || businessIdea.includes('psicologia')) {
+                        planText = `
+**Psicólogo(a)**
+O **YouWork** conecta você a clientes que precisam de apoio profissional.
+**1. Criar e Otimizar seu Perfil YouWork:**
+  * Descreva sua abordagem terapêutica e público-alvo (ex: terapia cognitivo-comportamental para adolescentes).
+  * Inclua sua formação e registro no conselho de classe.
+  * Publique pequenos textos sobre bem-estar e saúde mental em seu perfil.
+
+**2. Utilizar as Ferramentas de Marketing do YouWork:**
+  * Use a **Mentoria Inteligente** para criar uma estratégia de marketing que respeite a ética profissional.
+  * Utilize o chat para agendar sessões e enviar lembretes.
+  * Peça aos seus clientes satisfeitos para deixar uma avaliação anônima no app.
+`;
+                    }
+                    else {
+                        planText = `<div class="mt-4 text-gray-500">Para esta demonstração, a mentoria está disponível apenas para as ideias de negócio: **jardinagem**, **contador**, **desenvolvedor ai** e **psicólogo**. Por favor, insira uma dessas opções para ver um plano de ação.</div>`;
+                    }
+
+                    planOutput.innerHTML += `<div class="mt-4">${planText}</div>`;
+                    planOutput.classList.remove('hidden');
+                    loadingIndicator.classList.add('hidden');
+                }, 1500); // Simula o tempo de processamento da IA
+            });
+
+            // Configuração da cena 3D
+            const canvasContainer = document.getElementById('canvas-container');
+            let scene, camera, renderer, controls, phoneGroup, screenMaterial;
+
+            function init3D() {
+                const width = canvasContainer.clientWidth;
+                const height = canvasContainer.clientHeight;
+
+                scene = new THREE.Scene();
+                camera = new THREE.PerspectiveCamera(75, width / height, 0.1, 1000);
+                renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
+                renderer.setSize(width, height);
+                canvasContainer.appendChild(renderer.domElement);
+
+                // Luzes
+                const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+                scene.add(ambientLight);
+                const directionalLight = new THREE.DirectionalLight(0xffffff, 1);
+                directionalLight.position.set(5, 5, 5).normalize();
+                scene.add(directionalLight);
+
+                // Grupo para o telefone e a tela
+                phoneGroup = new THREE.Group();
+                
+                // Corpo do smartphone
+                const bodyGeometry = new THREE.BoxGeometry(2, 4, 0.2);
+                const bodyMaterial = new THREE.MeshStandardMaterial({ color: 0x2C3E50, metalness: 0.8, roughness: 0.5 });
+                const body = new THREE.Mesh(bodyGeometry, bodyMaterial);
+                
+                // Tela (parte interna)
+                const screenGeometry = new THREE.PlaneGeometry(1.8, 3.8);
+                const canvas = document.createElement('canvas');
+                canvas.width = 512;
+                canvas.height = 1024;
+                const ctx = canvas.getContext('2d');
+                
+                // Conteúdo da tela do app
+                ctx.fillStyle = '#E0F2FE'; // light-blue-100
+                ctx.fillRect(0, 0, canvas.width, canvas.height);
+                ctx.fillStyle = '#94A3B8'; // slate-400
+                ctx.fillRect(canvas.width * 0.1, canvas.height * 0.1, canvas.width * 0.8, canvas.height * 0.1);
+                ctx.fillRect(canvas.width * 0.1, canvas.height * 0.25, canvas.width * 0.8, canvas.height * 0.1);
+                ctx.fillStyle = '#4B5563'; // gray-600
+                ctx.font = '70px Inter';
+                ctx.fillText('YOUWORK', canvas.width * 0.1, canvas.height * 0.18);
+                ctx.fillStyle = '#94A3B8'; // slate-400
+                ctx.fillRect(canvas.width * 0.1, canvas.height * 0.45, canvas.width * 0.4, canvas.height * 0.05);
+                ctx.fillRect(canvas.width * 0.55, canvas.height * 0.45, canvas.width * 0.35, canvas.height * 0.05);
+                ctx.fillStyle = '#4B5563'; // gray-600
+                ctx.fillRect(canvas.width * 0.1, canvas.height * 0.6, canvas.width * 0.8, canvas.height * 0.2);
+                
+                const texture = new THREE.CanvasTexture(canvas);
+                screenMaterial = new THREE.MeshBasicMaterial({ map: texture });
+                const screen = new THREE.Mesh(screenGeometry, screenMaterial);
+                screen.position.z = 0.11; // Posição para ficar na frente do corpo do telefone
+                
+                phoneGroup.add(body);
+                phoneGroup.add(screen);
+                scene.add(phoneGroup);
+                
+                camera.position.z = 5;
+
+                // Controles de órbita para rotação
+                controls = new THREE.OrbitControls(camera, renderer.domElement);
+                controls.enableDamping = true;
+                controls.dampingFactor = 0.25;
+                controls.enableZoom = false;
+                controls.enablePan = false;
+
+                window.addEventListener('resize', onWindowResize, false);
+            }
+
+            function onWindowResize() {
+                const width = canvasContainer.clientWidth;
+                const height = canvasContainer.clientHeight;
+                camera.aspect = width / height;
+                camera.updateProjectionMatrix();
+                renderer.setSize(width, height);
+            }
+
+            function animate() {
+                requestAnimationFrame(animate);
+                controls.update();
+                phoneGroup.rotation.y += 0.005; // Rotação sutil automática
+                renderer.render(scene, camera);
+            }
+
+            // Inicializa a apresentação
+            showSlide(currentSlide);
+            // Inicia a cena 3D após o DOM estar pronto
+            init3D();
+            animate();
+        });
+    </script>
+</body>
+</html>
